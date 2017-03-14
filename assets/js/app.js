@@ -29,7 +29,7 @@ formEl.addEventListener("submit", function (e) {
   var request = new XMLHttpRequest();
 
   request.addEventListener("load", function () {
-    if (request.status === 302) { // CloudCannon redirects on success
+    if (request.status === 200) {
       document.getElementById("email-success").style.display = "block";
     } else {
       document.getElementById("email-failure").style.display = "block";
