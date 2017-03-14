@@ -1,0 +1,12 @@
+version: 3.2.1
+exclude:
+  - package.json
+sass:
+  load_paths:
+    - _sass
+    - node_modules/foundation-sites/scss
+defaults:
+  - scope:
+      path: ''
+    values:
+      layout: default

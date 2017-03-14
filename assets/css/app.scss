@@ -1,0 +1,136 @@
+---
+---
+
+@import 'foundation';
+@include foundation-everything;
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,700');
+
+$roboto: 'Roboto', sans-serif;
+
+body {
+  font-family: $roboto;
+  font-weight: 300;
+  letter-spacing: -1px;
+}
+
+.bg {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+
+  &.bg-video {
+    display: none;
+    @include breakpoint(large) {
+      display: block;
+    }
+  }
+
+  &.bg-photo {
+    display: none;
+    @include breakpoint(medium down) {
+      display: block;
+    }
+    background-image: url("/assets/img/mobile-bg.jpg");
+    background-size: cover;
+  }
+}
+
+
+header {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  //@include breakpoint(medium down) {
+    //padding-bottom: 10px;
+  //}
+}
+
+footer {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  background-color: #201a26;
+  color: white;
+  .contact {
+    text-align: center;
+  }
+  .copyright {
+    @include breakpoint(medium down) {
+      text-align: center;
+      margin-top: 30px;
+    }
+  }
+}
+
+.logo-container {
+  @include breakpoint(medium down) {
+    text-align: center;
+  }
+  .logo {
+    height: 52px;
+  }
+}
+
+h2 {
+  font-family: $roboto;
+  font-size: 50px;
+  font-weight: 100;
+  letter-spacing: -3px;
+  @include breakpoint(medium down) {
+    font-size: 35px;
+  }
+}
+
+input[type="text"], input[type="email"], textarea, input[type="submit"] {
+  &::placeholder {
+    color: black;
+    opacity: 1;
+  }
+  font-size: 12px;
+  border: 1px solid black;
+  background: none;
+}
+
+input[type="submit"] {
+  text-transform: uppercase;
+  padding: 5px 10px;
+}
+
+section.form {
+  padding-bottom: 20px;
+  @include breakpoint(large) {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  text-align: center;
+  font-size: 17px;
+  .form-container {
+    padding: 40px;
+    background-color: white;
+    @include breakpoint(large) {
+      padding: 20px;
+      width: 50%;
+    }
+    p {
+      @include breakpoint(large) {
+	line-height: 3;
+      }
+    }
+    form {
+      @include breakpoint(large) {
+	padding-top: 40px;
+	padding-bottom: 20px;
+	padding-left: 20%;
+	padding-right: 20%;
+      }
+      input[type="submit"] {
+	font-weight: 700;
+      }
+    }
+  }
+}
+
+address {
+  font-style: normal;
+}
