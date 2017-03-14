@@ -41,14 +41,14 @@ email: martin.desrumaux@epitech.eu
 	Notre nouveau site sera bientôt en ligne.<br />
 	D’ici là vous pouvez nous contacter :
 	</p>
-	<form id="contact-form">
+	<form id="contact-form" method="post">
 	  <input type="text" name="firstname" placeholder="Prénom" required="" />
 	  <input type="text" name="lastname" placeholder="Nom" required=""/>
 	  <input type="email" name="email" placeholder="Adresse mail" required="" />
 	  <textarea rows="5" name="message" placeholder="Message" required =""></textarea>
 	  <input type="hidden" name="_to" value="{{ page.email }}">
 	  <input type="text" name="_gotcha" style="display: none;">
-	  <input type="submit" name="submit" value="Envoyer">
+	  <input type="submit" name="submit" value="Envoyer" id="submit-btn">
 	</form>
       </div>
     </div>

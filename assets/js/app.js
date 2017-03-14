@@ -12,6 +12,7 @@ function getFormDataString(formEl) {
 
 // Fetch the form element
 var formEl = document.getElementById("contact-form");
+var submitBtn = document.getElementById("submit-btn");
 
 // Override the submit event
 formEl.addEventListener("submit", function (e) {
@@ -24,14 +25,15 @@ formEl.addEventListener("submit", function (e) {
     //}
   //}
 
+  submitBtn.setAttribute("disabled", "true");
   var request = new XMLHttpRequest();
 
   request.addEventListener("load", function () {
     if (request.status === 302) { // CloudCannon redirects on success
-      // It worked
       document.getElementById("email-success").style.display = "block";
     } else {
       document.getElementById("email-failure").style.display = "block";
+      submitBtn.removeAttribute("disabled");
     }
   });
 
