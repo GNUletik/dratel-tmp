@@ -1,5 +1,6 @@
 ---
 title: Dratel
+email: martin.desrumaux@epitech.eu
 ---
 
 <div class="bg bg-photo"></div>
@@ -18,6 +19,20 @@ title: Dratel
   <div class="row">
     <div class="large-12 columns">
       <div class="form-container">
+	<div class="alert callout" data-closable id="email-failure">
+	  <h5>Une erreur est arrivée</h5>
+	  <p>Veuillez contacter l'administrateur</p>
+	  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+	    <span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
+	<div class="success callout" data-closable id="email-success">
+	  <h5>L'email a été envoyé</h5>
+	  <p>Merci</p>
+	  <button class="close-button" aria-label="Dismiss alert" type="button" data-close>
+	    <span aria-hidden="true">&times;</span>
+	  </button>
+	</div>
 	<h2>
 	  Vous vous transformez...<br />
 	  ... nous aussi.
@@ -26,11 +41,13 @@ title: Dratel
 	Notre nouveau site sera bientôt en ligne.<br />
 	D’ici là vous pouvez nous contacter :
 	</p>
-	<form>
+	<form id="contact-form">
 	  <input type="text" name="firstname" placeholder="Prénom" required="" />
 	  <input type="text" name="lastname" placeholder="Nom" required=""/>
 	  <input type="email" name="email" placeholder="Adresse mail" required="" />
 	  <textarea rows="5" name="message" placeholder="Message" required =""></textarea>
+	  <input type="hidden" name="_to" value="{{ page.email }}">
+	  <input type="text" name="_gotcha" style="display: none;">
 	  <input type="submit" name="submit" value="Envoyer">
 	</form>
       </div>
