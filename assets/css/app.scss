@@ -11,6 +11,11 @@ body {
   font-family: $roboto;
   font-weight: 300;
   letter-spacing: -1px;
+  @include breakpoint(large) {
+    background-image: url("/assets/img/bg.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+  }
 }
 
 .bg {
